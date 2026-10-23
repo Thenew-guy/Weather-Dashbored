@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard Project</title>
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Weather Intelligence Dashboard</h1>
+        <p>By Abhigyan Badyar - CS 2nd Year Project</p>
+    </header>
+
+    <div class="container">
+        <!-- Main Search Area -->
+        <div class="search-section">
+            <input type="text" id="cityInput" placeholder="Enter city name..." value="Delhi">
+            <button id="searchBtn">Get Weather</button>
+        </div>
+
+        <!-- Weather Alerts -->
+        <div id="weatherAlert" class="alert hidden">
+            <strong>⚠️ Weather Alert:</strong> <span id="alertMsg"></span>
+        </div>
+
+        <!-- Current Data Cards -->
+        <div class="cards-container">
+            <div class="card">
+                <h3>Current Weather</h3>
+                <h1 id="tempDisplay">--°C</h1>
+                <p>Wind Speed: <span id="windDisplay">--</span> km/h</p>
+            </div>
+            
+            <div class="card">
+                <h3>Air Quality (AQI)</h3>
+                <h1 id="aqiDisplay">--</h1>
+                <p id="aqiStatus">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Trend Chart -->
+        <div class="chart-container">
+            <h3>7-Day Temperature Forecast</h3>
+            <canvas id="forecastChart"></canvas>
+        </div>
+
+        <hr>
+
+        <!-- City Comparison Section -->
+        <h2>Compare Two Cities</h2>
+        <div class="search-section">
+            <input type="text" id="city1" placeholder="First City..." value="Mumbai">
+            <input type="text" id="city2" placeholder="Second City..." value="Chennai">
+            <button id="compareBtn">Compare</button>
+        </div>
+
+        <div class="chart-container">
+            <h3>Max Temperature Comparison</h3>
+            <canvas id="compareChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Link to custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
